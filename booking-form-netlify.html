@@ -1,0 +1,165 @@
+<!-- 
+    NETLIFY FORMS BOOKING - Ready to use!
+    
+    Instructions:
+    1. Copy this form code
+    2. Replace the booking section in js/sections.js (around line 450)
+    3. Deploy to Netlify
+    4. Netlify will automatically handle form submissions
+    5. You'll get email notifications for each booking inquiry
+-->
+
+<div class="bg-madeira-cloud p-8 md:p-12 rounded-2xl shadow-xl">
+    <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <!-- Hidden fields for Netlify -->
+        <input type="hidden" name="form-name" value="booking">
+        
+        <!-- Honeypot for spam protection -->
+        <p class="hidden">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+        </p>
+        
+        <!-- Name -->
+        <div class="mb-6">
+            <label class="block text-left text-sm font-semibold text-madeira-earth mb-2">
+                Your Name *
+            </label>
+            <input type="text" 
+                   name="name" 
+                   required
+                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-madeira-ocean focus:ring-2 focus:ring-madeira-ocean/20 outline-none transition"
+                   placeholder="John Doe">
+        </div>
+        
+        <!-- Email -->
+        <div class="mb-6">
+            <label class="block text-left text-sm font-semibold text-madeira-earth mb-2">
+                Email Address *
+            </label>
+            <input type="email" 
+                   name="email" 
+                   required
+                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-madeira-ocean focus:ring-2 focus:ring-madeira-ocean/20 outline-none transition"
+                   placeholder="john@example.com">
+        </div>
+        
+        <!-- Dates -->
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <label class="block text-left text-sm font-semibold text-madeira-earth mb-2">
+                    Check-in Date *
+                </label>
+                <input type="date" 
+                       name="checkin" 
+                       required
+                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-madeira-ocean focus:ring-2 focus:ring-madeira-ocean/20 outline-none transition">
+            </div>
+            <div>
+                <label class="block text-left text-sm font-semibold text-madeira-earth mb-2">
+                    Check-out Date *
+                </label>
+                <input type="date" 
+                       name="checkout" 
+                       required
+                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-madeira-ocean focus:ring-2 focus:ring-madeira-ocean/20 outline-none transition">
+            </div>
+        </div>
+        
+        <!-- Room Type -->
+        <div class="mb-6">
+            <label class="block text-left text-sm font-semibold text-madeira-earth mb-2">
+                Preferred Room Type *
+            </label>
+            <select name="room-type" 
+                    required
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-madeira-ocean focus:ring-2 focus:ring-madeira-ocean/20 outline-none transition">
+                <option value="">Select a room type</option>
+                <option value="private-ensuite">Private Room with Ensuite Bathroom</option>
+                <option value="private-shared">Private Room with Shared Bathroom</option>
+                <option value="suite-balcony">Suite with Balcony</option>
+                <option value="shared-room">Shared Room</option>
+            </select>
+        </div>
+        
+        <!-- Number of Guests -->
+        <div class="mb-6">
+            <label class="block text-left text-sm font-semibold text-madeira-earth mb-2">
+                Number of Guests *
+            </label>
+            <select name="guests" 
+                    required
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-madeira-ocean focus:ring-2 focus:ring-madeira-ocean/20 outline-none transition">
+                <option value="">Select number of guests</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4+ Guests</option>
+            </select>
+        </div>
+        
+        <!-- Message -->
+        <div class="mb-8">
+            <label class="block text-left text-sm font-semibold text-madeira-earth mb-2">
+                Additional Message (Optional)
+            </label>
+            <textarea name="message" 
+                      rows="4"
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-madeira-ocean focus:ring-2 focus:ring-madeira-ocean/20 outline-none transition resize-none"
+                      placeholder="Tell us about your stay preferences, any questions, special requests..."></textarea>
+        </div>
+        
+        <!-- How did you hear about us -->
+        <div class="mb-8">
+            <label class="block text-left text-sm font-semibold text-madeira-earth mb-2">
+                How did you hear about us?
+            </label>
+            <select name="source" 
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-madeira-ocean focus:ring-2 focus:ring-madeira-ocean/20 outline-none transition">
+                <option value="">Select an option</option>
+                <option value="google">Google Search</option>
+                <option value="instagram">Instagram</option>
+                <option value="facebook">Facebook</option>
+                <option value="friend">Friend/Word of Mouth</option>
+                <option value="nomadlist">Nomad List</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        
+        <!-- Submit Button -->
+        <button type="submit" 
+                class="w-full bg-madeira-terracotta text-white px-12 py-4 rounded-full hover:bg-madeira-earth transition text-lg font-handwritten shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            Send Booking Inquiry
+        </button>
+        
+        <p class="text-sm text-gray-600 mt-6 text-center">
+            We'll respond within 24 hours. Or email us directly at 
+            <a href="mailto:hello@sonrisa.com" 
+               class="text-madeira-ocean hover:underline font-semibold">
+                hello@sonrisa.com
+            </a>
+        </p>
+    </form>
+</div>
+
+<!-- Success Message (shown after form submission) -->
+<style>
+    .success-message {
+        display: none;
+        background: #7FA99B;
+        color: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        margin: 2rem 0;
+    }
+    
+    .success-message.show {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>

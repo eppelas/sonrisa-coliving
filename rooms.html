@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Rooms - Sonrisa Co-living Madeira</title>
+    <meta name="description" content="Explore our 8+ private rooms in Paul do Mar. Check availability and pricing.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/rooms.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'madeira-ocean': '#4A9B9F',
+                        'madeira-eucalyptus': '#7FA99B',
+                        'madeira-terracotta': '#D8997A',
+                        'madeira-sand': '#E5D4C1',
+                        'madeira-earth': '#8B6F47',
+                        'madeira-green': '#5C8B6F',
+                        'madeira-cloud': '#F5F5F0',
+                    },
+                    fontFamily: {
+                        'serif': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                        'handwritten': ['Dancing Script', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-madeira-cloud">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-serif font-semibold text-madeira-earth">
+                    Sonrisa
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#about" class="text-gray-700 hover:text-madeira-ocean transition">About</a>
+                    <a href="index.html#community" class="text-gray-700 hover:text-madeira-ocean transition">Community</a>
+                    <a href="index.html#experiences" class="text-gray-700 hover:text-madeira-ocean transition">Experiences</a>
+                    <a href="index.html#location" class="text-gray-700 hover:text-madeira-ocean transition">Location</a>
+                    <a href="rooms.html" class="text-madeira-ocean font-semibold">Rooms</a>
+                    <a href="index.html#booking" class="bg-madeira-terracotta text-white px-6 py-2 rounded-full hover:bg-madeira-earth transition font-handwritten text-lg">
+                        Book Your Stay
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4 pb-4 space-y-3" id="mobile-menu">
+                <a href="index.html#about" class="block text-gray-700 hover:text-madeira-ocean transition">About</a>
+                <a href="index.html#community" class="block text-gray-700 hover:text-madeira-ocean transition">Community</a>
+                <a href="index.html#experiences" class="block text-gray-700 hover:text-madeira-ocean transition">Experiences</a>
+                <a href="index.html#location" class="block text-gray-700 hover:text-madeira-ocean transition">Location</a>
+                <a href="rooms.html" class="block text-madeira-ocean font-semibold">Rooms</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="text-madeira-terracotta font-handwritten text-2xl">Find Your Perfect Space</span>
+                <h1 class="text-5xl md:text-6xl font-serif font-light text-madeira-earth mt-2 mb-6">
+                    Our Rooms
+                </h1>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    8+ thoughtfully designed rooms with ensuite bathrooms, work desks, and stunning views. 
+                    Each space is your private sanctuary in our co-living community.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Grid -->
+    <section class="py-12 bg-madeira-cloud">
+        <div class="container mx-auto px-6">
+            <div class="space-y-20" id="rooms-container">
+                <!-- Rooms will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-madeira-earth text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-serif font-semibold mb-4">Sonrisa</h3>
+                    <p class="text-sm opacity-90">A sanctuary for nomads in the heart of Madeira.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <div class="space-y-2 text-sm">
+                        <a href="index.html#about" class="block hover:text-madeira-terracotta transition">About Us</a>
+                        <a href="rooms.html" class="block hover:text-madeira-terracotta transition">Rooms</a>
+                        <a href="index.html#community" class="block hover:text-madeira-terracotta transition">Community</a>
+                        <a href="index.html#booking" class="block hover:text-madeira-terracotta transition">Book Now</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-sm">
+                        <p>Paul do Mar, Madeira</p>
+                        <p>Email: hello@sonrisa.com</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="#" class="hover:text-madeira-terracotta transition">Instagram</a>
+                            <a href="#" class="hover:text-madeira-terracotta transition">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-8 text-center text-sm opacity-75">
+                <p>&copy; 2025 Sonrisa Co-living. Made with ❤️ in Madeira.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-serif font-semibold text-madeira-earth" id="modal-room-name"></h3>
+                    <button onclick="closeCalendarModal()" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="modal-calendar-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/rooms-data.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/rooms-page.js"></script>
+</body>
+</html>

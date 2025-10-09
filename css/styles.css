@@ -1,0 +1,378 @@
+/* Custom styles for Sonrisa Co-living */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Organic Natural Shapes */
+.organic-shape {
+    position: absolute;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+}
+
+.organic-blob-1 {
+    width: 1000px;
+    height: 700px;
+    background: radial-gradient(ellipse, #7FA99B 0%, #7FA99B 20%, transparent 65%);
+    border-radius: 30% 70% 70% 30% / 40% 60% 40% 60%;
+    animation: morph 15s ease-in-out infinite;
+}
+
+.organic-blob-2 {
+    width: 600px;
+    height: 900px;
+    background: radial-gradient(ellipse, #4A9B9F 0%, #4A9B9F 25%, transparent 70%);
+    border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
+    animation: morph 18s ease-in-out infinite reverse;
+}
+
+.organic-blob-3 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #D8997A 0%, #D8997A 35%, transparent 75%);
+    border-radius: 65% 35% 45% 55% / 55% 65% 35% 45%;
+    animation: morph 20s ease-in-out infinite;
+}
+
+.organic-blob-4 {
+    width: 1200px;
+    height: 550px;
+    background: radial-gradient(ellipse, #E5D4C1 0%, #E5D4C1 15%, transparent 60%);
+    border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
+    animation: morph 22s ease-in-out infinite;
+}
+
+.organic-blob-5 {
+    width: 450px;
+    height: 800px;
+    background: radial-gradient(ellipse, #7FA99B 0%, #7FA99B 30%, transparent 65%);
+    border-radius: 50% 50% 70% 30% / 30% 70% 30% 70%;
+    animation: morph-alt 17s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0%, 100% {
+        border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
+        transform: rotate(0deg) scale(1);
+    }
+    33% {
+        border-radius: 60% 40% 50% 50% / 45% 60% 40% 55%;
+        transform: rotate(120deg) scale(1.1);
+    }
+    66% {
+        border-radius: 50% 50% 45% 55% / 60% 40% 60% 40%;
+        transform: rotate(240deg) scale(0.9);
+    }
+}
+
+@keyframes morph-alt {
+    0%, 100% {
+        border-radius: 70% 30% 50% 50% / 30% 70% 30% 70%;
+        transform: rotate(0deg) scale(1) scaleX(1.2);
+    }
+    50% {
+        border-radius: 30% 70% 40% 60% / 70% 30% 70% 30%;
+        transform: rotate(180deg) scale(1.05) scaleX(0.8);
+    }
+}
+
+/* Interactive hover animations */
+.hover-lift {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-lift:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 30px rgba(74, 155, 159, 0.3);
+}
+
+/* Custom Calendar Styles */
+#custom-calendar {
+    min-width: 320px;
+    max-width: 400px;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#calendar-days > div {
+    min-height: 40px;
+    font-weight: 500;
+}
+
+#calendar-days > div:not(.cursor-not-allowed):hover {
+    transform: scale(1.1);
+}
+
+/* Decorative Stars */
+.decorative-stars {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1rem;
+}
+
+/* Floating decorative elements */
+.floating-leaf {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.12;
+    animation: float-gentle 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.floating-leaf-1 {
+    top: 20%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.floating-leaf-2 {
+    top: 50%;
+    right: 8%;
+    animation-delay: 5s;
+}
+
+.floating-leaf-3 {
+    bottom: 30%;
+    left: 10%;
+    animation-delay: 10s;
+}
+
+@keyframes float-gentle {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-10px) translateX(-10px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-30px) translateX(5px) rotate(3deg);
+    }
+}
+
+/* Decorative waves */
+.wave-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.wave-decoration svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Floating Cloud Animations */
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    filter: blur(20px);
+    animation: float 20s ease-in-out infinite;
+}
+
+.cloud-1 {
+    width: 200px;
+    height: 60px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.cloud-2 {
+    width: 150px;
+    height: 50px;
+    top: 50%;
+    right: 15%;
+    animation-delay: 5s;
+}
+
+.cloud-3 {
+    width: 180px;
+    height: 55px;
+    bottom: 30%;
+    left: 25%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-30px) translateX(20px);
+        opacity: 0.6;
+    }
+}
+
+/* Eucalyptus Branch Decorative Elements */
+.eucalyptus-branch {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    background-image: url("data:image/svg+xml,%3Csvg width='150' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M75 10 Q 80 50 75 90' stroke='%237FA99B' stroke-width='3' fill='none' opacity='0.4'/%3E%3Cellipse cx='70' cy='30' rx='15' ry='8' fill='%237FA99B' opacity='0.3'/%3E%3Cellipse cx='82' cy='50' rx='12' ry='7' fill='%237FA99B' opacity='0.3'/%3E%3Cellipse cx='68' cy='70' rx='14' ry='8' fill='%237FA99B' opacity='0.3'/%3E%3Cellipse cx='80' cy='85' rx='11' ry='6' fill='%237FA99B' opacity='0.3'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.eucalyptus-left {
+    top: 10%;
+    left: -30px;
+    transform: rotate(-15deg);
+}
+
+.eucalyptus-right {
+    top: 15%;
+    right: -30px;
+    transform: rotate(15deg) scaleX(-1);
+}
+
+/* Subtle Rainbow Gradient Overlays */
+.rainbow-overlay {
+    position: relative;
+}
+
+.rainbow-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 107, 107, 0.05) 0%,
+        rgba(255, 165, 0, 0.05) 20%,
+        rgba(255, 223, 0, 0.05) 40%,
+        rgba(127, 169, 155, 0.05) 60%,
+        rgba(74, 155, 159, 0.05) 80%,
+        rgba(139, 111, 71, 0.05) 100%
+    );
+    pointer-events: none;
+}
+
+/* Mobile Menu Transition */
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+}
+
+#mobile-menu.show {
+    display: block;
+}
+
+/* Navbar Scroll Effect */
+.navbar-scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Hover Effects */
+img {
+    transition: transform 0.3s ease;
+}
+
+/* Button Hover Effects */
+button, a[href*="#"] {
+    transition: all 0.3s ease;
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Playful Decorative Dots */
+.decorative-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #D8997A;
+    border-radius: 50%;
+    margin: 0 8px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F5F5F0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7FA99B;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4A9B9F;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .eucalyptus-branch {
+        display: none;
+    }
+}
+
+/* Focus States for Accessibility */
+a:focus, button:focus, input:focus, select:focus {
+    outline: 2px solid #4A9B9F;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    nav, footer {
+        display: none;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
