@@ -1,4 +1,17 @@
 // Calendar component for room availability
+if (!window.__roomCalendarRegistry) {
+    window.__roomCalendarRegistry = {};
+}
+
+function changeRoomCalendarMonth(instanceId, delta) {
+    const calendarInstance = window.__roomCalendarRegistry[instanceId];
+    if (!calendarInstance) return;
+    if (delta > 0) {
+        calendarInstance.nextMonth();
+    } else {
+        calendarInstance.previousMonth();
+    }
+}
 
 class RoomCalendar {
     constructor(containerId, roomData) {
@@ -6,6 +19,8 @@ class RoomCalendar {
         this.roomData = roomData;
         this.currentMonth = new Date();
         this.selectedDates = { checkin: null, checkout: null };
+        this.instanceId = `${containerId}-${Math.random().toString(36).slice(2, 9)}`;
+        window.__roomCalendarRegistry[this.instanceId] = this;
     }
 
     render() {
@@ -13,29 +28,29 @@ class RoomCalendar {
         
         const calendarHTML = `
             <div class="room-calendar">
-                <div class="calendar-header flex justify-between items-center mb-4">
-                    <button onclick="calendar.previousMonth()" class="p-2 hover:bg-madeira-cloud rounded">
+                <div class="calendar-header">
+                    <button onclick="changeRoomCalendarMonth('${this.instanceId}', -1)" class="calendar-month-button" aria-label="Previous month">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
                     </button>
-                    <h4 class="text-lg font-semibold text-madeira-earth">
+                    <h4>
                         ${this.getMonthName()} ${this.currentMonth.getFullYear()}
                     </h4>
-                    <button onclick="calendar.nextMonth()" class="p-2 hover:bg-madeira-cloud rounded">
+                    <button onclick="changeRoomCalendarMonth('${this.instanceId}', 1)" class="calendar-month-button" aria-label="Next month">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </button>
                 </div>
                 
-                <div class="calendar-legend flex gap-4 text-xs mb-3 justify-center bg-madeira-sand/30 py-2 px-4 rounded-lg">
-                    <div class="flex items-center gap-2">
-                        <div class="w-5 h-5 bg-madeira-ocean rounded flex items-center justify-center text-white text-xs">✓</div>
+                <div class="calendar-legend">
+                    <div class="calendar-legend-item">
+                        <div class="calendar-legend-swatch calendar-legend-available">✓</div>
                         <span>Available</span>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <div class="w-5 h-5 bg-gray-100 border border-gray-300 rounded flex items-center justify-center text-gray-400 text-xs">✕</div>
+                    <div class="calendar-legend-item">
+                        <div class="calendar-legend-swatch calendar-legend-booked">✕</div>
                         <span>Booked</span>
                     </div>
                 </div>
@@ -53,9 +68,9 @@ class RoomCalendar {
     renderDaysOfWeek() {
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         return `
-            <div class="calendar-days-header grid grid-cols-7 gap-1 mb-2">
+            <div class="calendar-days-header">
                 ${days.map(day => `
-                    <div class="text-center text-xs font-semibold text-gray-600 py-2">
+                    <div class="calendar-day-label">
                         ${day}
                     </div>
                 `).join('')}
@@ -71,11 +86,11 @@ class RoomCalendar {
         const daysInMonth = lastDay.getDate();
         const startingDayOfWeek = firstDay.getDay();
         
-        let daysHTML = '<div class="calendar-days grid grid-cols-7 gap-1">';
+        let daysHTML = '<div class="calendar-days">';
         
         // Empty cells before first day
         for (let i = 0; i < startingDayOfWeek; i++) {
-            daysHTML += '<div class="calendar-day"></div>';
+            daysHTML += '<div class="calendar-day calendar-day-empty"></div>';
         }
         
         // Days of the month
@@ -89,10 +104,11 @@ class RoomCalendar {
             const displayContent = isPast ? '·' : (isAvailable ? '✓' : '✕');
             
             daysHTML += `
-                <div class="calendar-day ${dayClass} aspect-square flex items-center justify-center text-lg rounded"
+                <div class="calendar-day ${dayClass}"
                      data-date="${dateStr}"
                      title="${isAvailable ? 'Available' : 'Booked'} - ${dateStr}">
-                    ${displayContent}
+                    <span class="calendar-day-date">${day}</span>
+                    <span class="calendar-day-status">${displayContent}</span>
                 </div>
             `;
         }

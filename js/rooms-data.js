@@ -22,8 +22,8 @@ const roomsData = [
         },
         images: [
             "images/sonrisa-private-room.JPG",
-            "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=2071",
-            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070"
+            "images/room-stock-soft-neutral.jpg",
+            "images/room-stock-classic.jpg"
         ],
         availability: generateAvailability(0.7)
     },
@@ -47,9 +47,9 @@ const roomsData = [
             "6weeks": 1750
         },
         images: [
-            "images/sonrisa-private-room.JPG",
-            "https://images.unsplash.com/photo-1588417271135-8b9c1c8d9d5a?q=80&w=2070",
-            "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070"
+            "images/room-stock-soft-neutral.jpg",
+            "images/sonrisa-room-suite-window.jpg",
+            "images/room-stock-classic.jpg"
         ],
         availability: generateAvailability(0.6)
     },
@@ -73,9 +73,9 @@ const roomsData = [
             "6weeks": 1600
         },
         images: [
-            "images/sonrisa-private-room.JPG",
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2070",
-            "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=2070"
+            "images/sonrisa-private-room-luxury.jpg",
+            "images/sonrisa-room-suite-angle.jpg",
+            "images/room-stock-bright-ensuite.jpg"
         ],
         availability: generateAvailability(0.8)
     },
@@ -99,9 +99,9 @@ const roomsData = [
             "6weeks": 1600
         },
         images: [
-            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070",
-            "https://images.unsplash.com/photo-1581858788964-c4c70e7c9a53?q=80&w=2070",
-            "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=2071"
+            "images/room-stock-bright-ensuite.jpg",
+            "images/room-stock-bright-window.jpg",
+            "images/room-stock-soft-neutral.jpg"
         ],
         availability: generateAvailability(0.75)
     },
@@ -125,9 +125,9 @@ const roomsData = [
             "6weeks": 1600
         },
         images: [
-            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2070",
-            "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070",
-            "https://images.unsplash.com/photo-1540206395-68808572332f?q=80&w=2070"
+            "images/room-stock-wood-warm.jpg",
+            "images/sonrisa-room-suite-bed.jpg",
+            "images/room-stock-comfort-light.jpg"
         ],
         availability: generateAvailability(0.65)
     },
@@ -151,9 +151,9 @@ const roomsData = [
             "6weeks": 1350
         },
         images: [
-            "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&w=2070",
-            "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070",
-            "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=2080"
+            "images/room-stock-comfort-light.jpg",
+            "images/room-stock-classic.jpg",
+            "images/room-stock-wood-warm.jpg"
         ],
         availability: generateAvailability(0.85)
     },
@@ -177,37 +177,11 @@ const roomsData = [
             "6weeks": 1350
         },
         images: [
-            "https://images.unsplash.com/photo-1585128719753-ae6ccc10e7ee?q=80&w=2070",
-            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053",
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2070"
+            "images/room-stock-simple-minimal.jpg",
+            "images/room-stock-wood-warm.jpg",
+            "images/room-stock-bright-ensuite.jpg"
         ],
         availability: generateAvailability(0.9)
-    },
-    {
-        id: 8,
-        name: "Shared Community Room",
-        type: "shared-room",
-        description: "Share with one other guest. Perfect for solo travelers wanting to make instant connections.",
-        features: [
-            "2 single beds",
-            "Shared bathroom",
-            "Shared work space",
-            "Great for meeting people",
-            "Most affordable option",
-            "18 m²"
-        ],
-        capacity: 2,
-        pricing: {
-            "2weeks": 400,
-            "1month": 700,
-            "6weeks": 1000
-        },
-        images: [
-            "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=2057",
-            "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2070",
-            "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2070"
-        ],
-        availability: generateAvailability(0.5)
     }
 ];
 
